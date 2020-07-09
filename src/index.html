@@ -5,20 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
-  <script src="script/Api.js" defer></script>
-  <script src="script/Popup.js" defer></script>
-  <script src="script/PopupImage.js" defer></script>
-  <script src="script/Card.js" defer></script>
-  <script src="script/CardList.js" defer></script>
-  <script src="script/UserInfo.js" defer></script>
-  <script src="script/FormValidator.js" defer></script>
-  <script src="script/script.js" defer></script>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+      <img src="<%=require('./images/logo.svg')%>" alt="mesto logo" class="logo">
+      <!-- <img src="./images/logo.svg" alt="mesto logo" class="logo"> -->
     </header>
 
     <div class="profile root__section">
@@ -56,7 +49,8 @@
     <div class="popup-container">
       <div class="popup" id="popup-add">
         <div class="popup__content">
-          <img src="./images/close.svg" alt="" class="popup__close">
+          <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+          <!-- <img src="./images/close.svg" alt="" class="popup__close"> -->
           <h3 class="popup__title">Название</h3>
           <form class="popup__form" name="add">
               <input 
@@ -83,7 +77,8 @@
 
       <div class="popup" id="popup-edit">
         <div class="popup__content">
-          <img src="./images/close.svg" alt="" class="popup__close">
+          <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+          <!-- <img src="./images/close.svg" alt="" class="popup__close"> -->
           <h3 class="popup__title">Редактировать профиль</h3>
           <form class="popup__form" name="edit">
               <input 
@@ -111,12 +106,15 @@
 
       <div class="popup" id="popup-pic">
         <div class="popup__image">
-          <img src="./images/close.svg" alt="" class="popup__close">
+          <img src="<%=require('./images/close.svg')%>" alt="" class="popup__close">
+          <!-- <img src="./images/close.svg" alt="" class="popup__close"> -->
           <img src="" alt="Фото приятного места" class="popup__picture">
         </div>
       </div>
     </div>
     <!-- Конец шаблона -->
   </div>
+  
+  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
 </html>

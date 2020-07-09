@@ -1,6 +1,4 @@
-'use strict';
-
-class Card {
+export default class Card {
   constructor(templateCard, cardData, showPopupMethod, cardSelectors, toggleLikeApi, userInfo, removeCardApi, errorHandler) {
     this.name = cardData.name;
     this.link = cardData.link;
@@ -23,13 +21,6 @@ class Card {
 
   like() {
     this.cardIsLiked = !this.cardIsLiked;
-    // Надо исправить
-    // Здесь и в подобных случаях -- URL должен быть инкапсулирован внутри класса Api, сюда, например,
-    // вы должны только id карты передать и флаг логический, но не путь.
-    // Причина простая. Представьте что API сервера меняет путь к карточкам с cards на places.
-    // Вам придется по всему проекту искать где вы этот путь указали и исправлять.
-    // А так -- достаточно внести исправления в класс. А еще пути можно собрать в объект с конфигом для вашего Api,
-    // который вы в конструктор Api закините, так тогда и класс менять не надо, достаточно конфиг отредактировать       +
     this.toggleLikeApi({ id: this.cardId, isLiked: this.cardIsLiked })
       .then(result => {
         this.cardLikeButton.classList.toggle('place-card__like-icon_liked');

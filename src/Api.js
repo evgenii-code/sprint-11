@@ -1,6 +1,4 @@
-'use strict';
-
-class Api {
+export default class Api {
   constructor(options) {
     this.baseUrl = options.baseUrl;
     this.headers = options.headers;
@@ -15,8 +13,6 @@ class Api {
         if (res.ok) {
           return res.json();
         }
-        // Можно лучше
-        // return Promise.reject(new Error(`Ошибка: ${res.status}`));     +
         return Promise.reject(new Error(`Ошибка: ${res.status}`));
       });
   }

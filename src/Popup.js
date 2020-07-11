@@ -1,6 +1,4 @@
-'use strict';
-
-class Popup {
+export default class Popup {
   constructor(popup, closeButton, callBack, openButton) {
     this.openButton = openButton;
     this.popup = popup;
